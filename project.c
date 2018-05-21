@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #define PI (3.14159265358979323846)
-#define g (9.8)
-//#define PI_DIV_180 (0.017453292519943296)//π/180
-//#define DegToRad(x) ((x)*PI_DIV_180)//角度转换为弧度
+#define g (10)
 
 double v0;
 double time;
@@ -13,7 +11,7 @@ double angle;
 double hob;//height_of_building
 
 
-void main()
+int main()
 {
     printf("Calculate-of-The-Ballistic-Impact\n");
     printf("  / v0\n");
@@ -35,66 +33,40 @@ time = ((2*v0*sin(angle))/g) + (sqrt((2*g*hob)+pow(v0*sin(angle),2))-v0*sin(angl
 /*distance = pow(v0,2) * sin(2 * angle)/ g;//no building*/
 distance = (((2*v0*sin(angle))/g) + (sqrt((2*g*hob)+pow(v0*sin(angle),2))-v0*sin(angle))/g)*v0*cos(angle);
 
-printf("height =%lf \n", height);
+/*printf("height =%lf \n", height);
 printf("time =%lf \n", time);
-printf("distance =%lf \n", distance);
+printf("distance =%lf \n", distance);*/
+
+int x,y;
+printf("Do you have the specific time?\n1.Yes  2.NO\n");
+scanf("%d",&x);
+
+if (x==1)
+{
+    printf("When do you want the result?\n");
+    scanf("%lf",&time);
+
+
+    height = hob + (v0 * sin(angle) * time) - (g * pow(time,2))/ 2;
+
+    if (height<=0)
+    {
+        printf("The height of the given time is 0.\n");
+    }
+
+    if (height>0)
+    {
+        printf("The height of the given time is %f.\n",height);
+    }
 }
 
-/*int x,y;
-printf("What do you want?\n1.Height and distance 2.time 3.both");
-    scanf("%d", &x);
-    if(x == 1 || x == 3)
-    {
-        printf("Do you need the data stream?\n1.Yes 2.No\n");
-        scanf("%d",&y);
-    }
+if (x==2)
+{
+    printf("height =%lf \n", height);
+    printf("time =%lf \n", time);
+    printf("distance =%lf \n", distance);
+}
 
-    switch(x)
-    {
-        case    1:
-            switch(y)
-            {
-                case 1:
-                    hei_dis(V0, angle, 1);
-                    break;
-
-                case 2:
-                    printf("height =%lf \n", height);
-                    printf("distance =%lf \n", distance);
-                    break;
-
-                default:
-                    printf("Wrong choice, please run this program again.");
-            }
-            break;
-
-        case    2:
-            printf("time =%lf \n", time);
-            break;
-
-        case    3:
-            switch(y)
-            {
-                case 1:
-                    hei_dis(V0, angle, 1);
-                    time(V0, angle);
-                    break;
-
-                case 2:
-                    printf("height =%lf \n", height);
-                    printf("distance =%lf \n", distance);
-                    break;
-
-                default:
-                    printf("Wrong choice, please run this program again.");
-            }
-
-        default:
-            printf("Wrong choice, please run this program again.");
-    }
-    return 0;*/
-
-
-
-
-
+if (x!=1,x!=2) return NULL;
+    return r;
+}
