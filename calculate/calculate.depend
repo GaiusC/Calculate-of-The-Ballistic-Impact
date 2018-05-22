@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1526961773 source:c:\users\kitlap\desktop\c program\project\calculate\main.c
+	<stdio.h>
+	<math.h>
+	"lib.h"
+
+1526961960 c:\users\kitlap\desktop\c program\project\calculate\lib.h
+
+1526962059 source:c:\users\kitlap\desktop\c program\project\calculate\lib.c
+	<stdio.h>
+	<math.h>
+	<stdio.h>
+	"lib.h"
+
+1526968596 source:c:\users\kitlap\desktop\calculate\main.c
+	<stdio.h>
+	<math.h>
+	"lib.h"
+
+1526968160 c:\users\kitlap\desktop\calculate\lib.h
+
+1526968161 source:c:\users\kitlap\desktop\calculate\lib.c
+	<stdio.h>
+	<math.h>
+	<stdio.h>
+	"lib.h"
+
